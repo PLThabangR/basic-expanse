@@ -45,9 +45,7 @@ const ExpanseList = ({expanses,onDelete}:Props) => {
     <tfoot>
             <td>Total</td>
             <td>R{expanses.reduce((total,expense)=> expense.amount+total,0).toFixed(2)}</td>
-            <td>Total</td>
-            <td>Total</td>
-            <td>Total</td>
+           
 
     </tfoot>
   </table>
