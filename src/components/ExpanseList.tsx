@@ -5,7 +5,7 @@ interface Props{
     onDelete:(id:number) => void;
 }
 const ExpanseList = ({expanses,onDelete}:Props) => {
-   
+ if(expanses.length==0) return null;  
   return (
     <div>
         <div className="overflow-x-auto">
