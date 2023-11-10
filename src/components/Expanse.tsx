@@ -4,4 +4,4 @@ description:string;
 amount:number;
 category :string;
 }
-export const categories =["Clothes","Utilities","Entertainment"];
+export const categories =["Clothes","Utilities","Entertainment"] as const

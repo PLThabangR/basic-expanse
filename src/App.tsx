@@ -16,9 +16,13 @@ function App() {
  const expanseValue = selectedCategory ? expenses.filter(e => e.category ===selectedCategory): expenses;
   return (
     <>  
-      <ExpanseFilter onSelectCategory={category=>setSelectedCategory(category)}/>
-       <ExpanseList expanses={expanseValue} onDelete={(id)=>{setExpanses(expenses.filter(e=> e.id !=id))}}/>
+    <div className='container'>
+    <ExpanseFilter onSelectCategory={category=>setSelectedCategory(category)}/>
+    <ExpanseList expanses={expanseValue} onDelete={(id)=>{setExpanses(expenses.filter(e=> e.id !=id))}}/>
        <ExpanseForm/>
+    </div>
+    
+     
     </>
   )
 }
