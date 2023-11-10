@@ -3,8 +3,10 @@ import { useState } from 'react'
 import './App.css'
 import ExpanseList from './components/ExpanseList'
 import ExpanseFilter from './components/ExpanseFilter'
+import ExpanseForm from './components/ExpanseForm'
 
 function App() {
+ 
   const [selectedCategory,setSelectedCategory]=useState('')
  const [expenses,setExpanses] = useState ([
   {id:1,description:'Fridge',amount:7000,category:"Utilities"},
@@ -16,6 +18,7 @@ function App() {
     <>  
       <ExpanseFilter onSelectCategory={category=>setSelectedCategory(category)}/>
        <ExpanseList expanses={expanseValue} onDelete={(id)=>{setExpanses(expenses.filter(e=> e.id !=id))}}/>
+       <ExpanseForm/>
     </>
   )
 }
