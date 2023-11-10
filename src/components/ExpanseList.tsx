@@ -1,10 +1,11 @@
-import React from 'react'
-import  Expanse  from './Expanse';
+import  {Expanse}  from './Expanse';
 
-const ExpanseList = () => {
-    interface Props{
-        expanse:string[]
-    }
+interface Props{
+    expanses:Expanse[];
+    onDelete:(id:number) => void;
+}
+const ExpanseList = ({expanses,onDelete}:Props) => {
+   
   return (
     <div>
         <div className="overflow-x-auto">
@@ -12,27 +13,43 @@ const ExpanseList = () => {
     {/* head */}
     <thead>
       <tr>
-        <th></th>
+       
         <th>Description</th>
         <th>Amount</th>
         <th>Category</th>
       </tr>
     </thead>
     <tbody>
-      {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-        <td>
-        <button className="btn btn-error">Delete</button>
-        </td>
+      {/* Rendering the array*/}
+      
+
+        {expanses.map( expanse => <tr key={expanse.id}>
+            <td>{expanse.description}</td>
+            <td>{expanse.amount}</td>
+            <td>{expanse.category}</td>
+              <td>
+              <button className="btn btn-error" onClick={()=>onDelete(expanse.id)}>Delete</button>
+                </td>  
+           
+        </tr>) }
+       
+      
+       
+       
+      
         
-      </tr>
+     
      
     
     </tbody>
+    <tfoot>
+            <td>Total</td>
+            <td>R{expanses.reduce((total,expense)=> expense.amount+total,0).toFixed(2)}</td>
+            <td>Total</td>
+            <td>Total</td>
+            <td>Total</td>
+
+    </tfoot>
   </table>
 </div>
 
