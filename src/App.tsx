@@ -19,7 +19,7 @@ function App() {
     <div className='container'>
     <ExpanseFilter onSelectCategory={category=>setSelectedCategory(category)}/>
     <ExpanseList expanses={expanseValue} onDelete={(id)=>{setExpanses(expenses.filter(e=> e.id !=id))}}/>
-       <ExpanseForm/>
+       <ExpanseForm onSubmit ={data =>setExpanses([...expenses,{...data,id:expenses.length+1 }])} />
     </div>
     
      
