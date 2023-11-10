@@ -1,6 +1,10 @@
 import React from 'react'
+import  Expanse  from './Expanse';
 
 const ExpanseList = () => {
+    interface Props{
+        expanse:string[]
+    }
   return (
     <div>
         <div className="overflow-x-auto">
